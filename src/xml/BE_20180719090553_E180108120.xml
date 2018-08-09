@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bonEntree>
+    <header>
+        <typeMessage>BON_ENTREE</typeMessage>
+        <fonctionMessage>1</fonctionMessage>
+        <emetteur>TMSA</emetteur>
+        <destinataire>ADII</destinataire>
+        <numeroMessage>1234567891234567890</numeroMessage>
+        <dateMessage>2018-07-19T09:05:53</dateMessage>
+    </header>
+    <AMP>
+        <numVersionAMP>02</numVersionAMP>
+        <numAMP>E180108120</numAMP>
+    </AMP>
+    <unite>
+        <typeUnite>TIR</typeUnite>
+        <sousTypeUnite>Ensemble Routier</sousTypeUnite>
+        <numUnite>UAB001</numUnite>
+        <numTracteur>TAB001</numTracteur>
+        <numPlateau>PAB001</numPlateau>
+    </unite>
+    <dums>
+        <dum>
+            <referenceDUM>41102220180003660</referenceDUM>
+        </dum>
+        <dum>
+            <referenceDUM>41102220180003665</referenceDUM>
+        </dum>
+    </dums>
+    <dateOperation>2018-07-19T17:05:53</dateOperation>
+</bonEntree>

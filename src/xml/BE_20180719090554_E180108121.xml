@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bonEntree>
+  <header>
+    <typeMessage>BON_ENTREEE</typeMessage>
+   <fonctionMessage>1</fonctionMessage>
+    <emetteur>TMSAA</emetteur>
+    <destinataire>ADII</destinataire>
+    <numeroMessage>1234567891234567891</numeroMessage>
+    <dateMessage>2018-07-19T09:06:53</dateMessage>
+  </header>
+  <AMP>
+    <numVersionAMP>02</numVersionAMP>
+    <numAMP>E180108121</numAMP>
+  </AMP>
+  <unite>
+    <typeUnite>TIR</typeUnite>
+    <sousTypeUnite>Ensemble Routier</sousTypeUnite>
+    <numUnite>UAB002</numUnite>
+    <numTracteur>TAB002</numTracteur>
+    <numPlateau>PAB002</numPlateau>
+  </unite>
+  <etatChargement>
+    <referenceEtatChagement>4110222018000402166668</referenceEtatChagement>
+  </etatChargement>
+  <dateOperation>2018-07-19T17:05:53</dateOperation>
+</bonEntree>
