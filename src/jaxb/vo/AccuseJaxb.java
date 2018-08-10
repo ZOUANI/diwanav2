@@ -3,20 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jaxb.vo.ack;
+package jaxb.vo;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author YOUNES
  */
+@XmlRootElement(name = "accuseReception")
 public class AccuseJaxb {
 
     protected AccuseHeaderJaxb header;
     protected AccuseInfoJaxb info;
 
+    @XmlElement(name = "header")
     public AccuseHeaderJaxb getHeader() {
-        if(header==null){
-            header= new  AccuseHeaderJaxb();
+        if (header == null) {
+            header = new AccuseHeaderJaxb();
         }
         return header;
     }
@@ -25,9 +29,10 @@ public class AccuseJaxb {
         this.header = header;
     }
 
+    @XmlElement(name = "accuse")
     public AccuseInfoJaxb getInfo() {
-         if(info==null){
-            info= new  AccuseInfoJaxb();
+        if (info == null) {
+            info = new AccuseInfoJaxb();
         }
         return info;
     }

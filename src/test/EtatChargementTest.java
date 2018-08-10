@@ -6,7 +6,9 @@
 package test;
 
 import javax.xml.bind.JAXBException;
-import jaxb.convertor.AccuseReceptionEtatChargementJaxbHelper;
+import jaxb.convertor.AccuseJaxbHelper;
+import jaxb.convertor.BonEntreeAccuseJaxbHelper;
+import jaxb.convertor.EtatChargementAccuseJaxbHelper;
 import jaxb.convertor.EtatChargementJaxbHelper;
 import jaxb.vo.EtatChargementJaxb;
 import org.xml.sax.SAXException;
@@ -27,12 +29,12 @@ public class EtatChargementTest {
         System.out.println(etatChargementJaxb);
 
         EtatChargementSynataxicalValidator etatChargementSynataxicalValidator = new EtatChargementSynataxicalValidator();
-         Object[] resValidation = etatChargementSynataxicalValidator.validate(etatChargementJaxb, xmlFilePath);
+        Object[] resValidation = etatChargementSynataxicalValidator.validate(etatChargementJaxb, xmlFilePath);
         System.out.println(etatChargementSynataxicalValidator.getErrorMessages());
-        
-        
-        AccuseReceptionEtatChargementJaxbHelper accuseReceptionEtatChargementJaxbHelper = new AccuseReceptionEtatChargementJaxbHelper();
-        accuseReceptionEtatChargementJaxbHelper.marshall(etatChargementJaxb, resValidation, accuseFilePath);
+
+        EtatChargementAccuseJaxbHelper etatChargementAccuseJaxbHelper = new EtatChargementAccuseJaxbHelper();
+        etatChargementAccuseJaxbHelper.generateAccuse(etatChargementJaxb.getHeader(), etatChargementJaxb.getReferenceEtatChagement(),
+                 "EC", resValidation, accuseFilePath);
     }
 
 }

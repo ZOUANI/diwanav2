@@ -6,7 +6,8 @@
 package test;
 
 import javax.xml.bind.JAXBException;
-import jaxb.convertor.AccuseReceptionBonEntreeJaxbHelper;
+import jaxb.convertor.AccuseJaxbHelper;
+import jaxb.convertor.BonEntreeAccuseJaxbHelper;
 import jaxb.convertor.BonEntreeJaxbHelper;
 import jaxb.vo.BonEntreeJaxb;
 import org.xml.sax.SAXException;
@@ -30,8 +31,9 @@ public class BonEntreeTest {
         Object[] resValidation = bonEntreeSyntaxicalValidator.validate(bonEntreeJaxb, xmlFilePath);
         System.out.println(bonEntreeSyntaxicalValidator.getErrorMessages());
 
-        AccuseReceptionBonEntreeJaxbHelper accuseReceptionBonEntreeJaxbHelper = new AccuseReceptionBonEntreeJaxbHelper();
-        accuseReceptionBonEntreeJaxbHelper.marshall(bonEntreeJaxb, resValidation, accuseFilePath);
+        BonEntreeAccuseJaxbHelper accuseReceptionBonEntreeJaxbHelper = new BonEntreeAccuseJaxbHelper(bonEntreeJaxb);
+        accuseReceptionBonEntreeJaxbHelper.generateAccuse(bonEntreeJaxb.getHeader(), bonEntreeJaxb.getAMP().getNumAMP()
+                , "BE", resValidation, accuseFilePath);
 
     }
 

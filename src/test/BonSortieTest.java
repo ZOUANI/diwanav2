@@ -6,7 +6,7 @@
 package test;
 
 import javax.xml.bind.JAXBException;
-import jaxb.convertor.AccuseReceptionBonSortieJaxbHelper;
+import jaxb.convertor.BonSortieAccuseJaxbHelper;
 import jaxb.convertor.BonSortieJaxbHelper;
 import jaxb.vo.BonSortieJaxb;
 import org.xml.sax.SAXException;
@@ -31,8 +31,9 @@ public class BonSortieTest {
         Object[] resValidation = bonSortieSyntaxicalValidator.validate(bonSortieJaxb, xmlFilePath);
         System.out.println(bonSortieSyntaxicalValidator.getErrorMessages());
 
-        AccuseReceptionBonSortieJaxbHelper accuseReceptionBonSortieJaxbHelper = new AccuseReceptionBonSortieJaxbHelper();
-        accuseReceptionBonSortieJaxbHelper.marshall(bonSortieJaxb, resValidation, accuseFilePath);
+        BonSortieAccuseJaxbHelper accuseReceptionBonEntreeJaxbHelper = new BonSortieAccuseJaxbHelper(bonSortieJaxb);
+        accuseReceptionBonEntreeJaxbHelper.generateAccuse(bonSortieJaxb.getHeader(), bonSortieJaxb.getDum().getReference()
+                , "BS", resValidation, accuseFilePath);
     }
 
 }

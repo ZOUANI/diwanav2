@@ -14,10 +14,6 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
-import jaxb.vo.BonSortieJaxb;
-import jaxb.vo.ack.AccuseJaxb;
-import jaxb.vo.HeaderJaxb;
-import jaxb.vo.ack.AccuseReceptionBonSortieJaxb;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXNotRecognizedException;
 import org.xml.sax.SAXNotSupportedException;
@@ -67,6 +63,8 @@ public class JaxbUtil<T> {
             ex.printStackTrace();
         }
     }
+    
+   
 
     public static Object[] validateXML(String inputXml, String xsdPath) throws SAXNotRecognizedException, SAXNotSupportedException {
         return null;
