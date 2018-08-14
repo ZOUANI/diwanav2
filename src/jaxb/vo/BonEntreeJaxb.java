@@ -4,9 +4,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "bonEntree")
-public class BonEntreeJaxb {
+public class BonEntreeJaxb extends AbstractJaxbObject{
 
-    private HeaderJaxb header;
+ //   private HeaderJaxb header;
     private AMPJaxb AMP;
     private UniteJaxb unite;
     private DumsJaxb dums;
@@ -14,17 +14,17 @@ public class BonEntreeJaxb {
     private String dateOperation;
     private OperateurJaxb operateur;
 
-    @XmlElement(name = "header")
-    public HeaderJaxb getHeader() {
-        if (header == null) {
-            header = new HeaderJaxb();
-        }
-        return header;
-    }
-
-    public void setHeader(HeaderJaxb value) {
-        this.header = value;
-    }
+//    @XmlElement(name = "header")
+//    public HeaderJaxb getHeader() {
+//        if (header == null) {
+//            header = new HeaderJaxb();
+//        }
+//        return header;
+//    }
+//
+//    public void setHeader(HeaderJaxb value) {
+//        this.header = value;
+//    }
 
     @XmlElement(name = "unite")
     public UniteJaxb getUnite() {
@@ -100,6 +100,11 @@ public class BonEntreeJaxb {
         return "BonEntreeJaxb{\n" + "header=" + header + "\n, amp=" + AMP + "\n, unite=" + unite + "\n"
                 + ", dums=" + dums + "\n, etatChargement=" + etatChargement + "\n, dateOperation=" + dateOperation + "\n"
                 + ", operateur=" + operateur + '}';
+    }
+
+    @Override
+    public String getReferenceInXmlFile() {
+        return this.getAMP().getNumAMP();
     }
 
 }

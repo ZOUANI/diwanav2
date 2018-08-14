@@ -1,4 +1,4 @@
-package validator;
+package validator.syntaxe;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -18,6 +18,7 @@ public class BonSortieSyntaxicalValidator extends SyntaxicalValidator<BonSortieJ
 
    
     // probleme avec la date !!!! quelle date ? op ou bien message ?
+    @Override
     public Object[] validate(BonSortieJaxb bonSortieJaxb, String xmlFileName) throws JAXBException, SAXException {
         return super.validate(bonSortieJaxb, "BS", bonSortieJaxb.getBon().getReferenceDS(), bonSortieJaxb.getHeader().getDateMessage(), xmlFileName);
     }

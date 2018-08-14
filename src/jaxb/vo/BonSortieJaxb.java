@@ -13,11 +13,11 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author YOUNES
  */
 @XmlRootElement(name = "bonSortie")
-public class BonSortieJaxb {
+public class BonSortieJaxb extends AbstractJaxbObject{
 
     private BonSortieInfoJaxb bon;
     private DumJaxb dum;
-    private HeaderJaxb header;
+   // private HeaderJaxb header;
     private OperateurJaxb operateur;
 
     @XmlElement(name = "bon")
@@ -44,17 +44,16 @@ public class BonSortieJaxb {
         this.dum = dum;
     }
 
-    @XmlElement(name = "header")
-    public HeaderJaxb getHeader() {
-        if (header == null) {
-            header = new HeaderJaxb();
-        }
-        return header;
-    }
-
-    public void setHeader(HeaderJaxb header) {
-        this.header = header;
-    }
+//    public HeaderJaxb getHeader() {
+//        if (header == null) {
+//            header = new HeaderJaxb();
+//        }
+//        return header;
+//    }
+//
+//    public void setHeader(HeaderJaxb header) {
+//        this.header = header;
+//    }
 
     @XmlElement(name = "operateur")
     public OperateurJaxb getOperateur() {
@@ -73,5 +72,11 @@ public class BonSortieJaxb {
         return "BonSortie{\n" + "bon=" + bon + "\n\n, dum=" + dum
                 + "\n\n, header=" + header + "\n\n, operateur=" + operateur + "\n\n}";
     }
+    
+    @Override
+    public String getReferenceInXmlFile() {
+        return this.getBon().getReferenceBon();
+    }
+
 
 }

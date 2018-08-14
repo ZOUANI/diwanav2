@@ -5,6 +5,7 @@
  */
 package jaxb.convertor;
 
+import jaxb.vo.AbstractJaxbObject;
 import jaxb.vo.AccuseJaxb;
 import jaxb.vo.BonEntreeJaxb;
 
@@ -32,5 +33,13 @@ public class BonEntreeAccuseJaxbHelper extends AccuseJaxbHelper {
     public void setBonEntreeJaxb(BonEntreeJaxb bonEntreeJaxb) {
         this.bonEntreeJaxb = bonEntreeJaxb;
     }
+
+//    @Override
+//    public AccuseJaxbHelper getInstance(AbstractJaxbObject accuseJaxb) {
+//            return new BonEntreeAccuseJaxbHelper((BonEntreeJaxb) accuseJaxb);
+//
+//    }
+
+   
 
 }

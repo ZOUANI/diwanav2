@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package validator;
+package validator.syntaxe;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,6 +22,7 @@ public class EtatChargementSynataxicalValidator extends SyntaxicalValidator<Etat
     private static final List<String> DECISION_SELECTIVITE = Arrays.asList("AC", "VP");
 
     // probleme avec la date !!!! quelle date ? op ou bien message ?
+    @Override
     public Object[] validate(EtatChargementJaxb etatChargementJaxb, String xmlFileName) throws JAXBException, SAXException {
         return super.validate(etatChargementJaxb, "EC", etatChargementJaxb.getReferenceEtatChagement(), etatChargementJaxb.getHeader().getDateMessage(), xmlFileName);
     }

@@ -12,7 +12,7 @@ import jaxb.convertor.EtatChargementAccuseJaxbHelper;
 import jaxb.convertor.EtatChargementJaxbHelper;
 import jaxb.vo.EtatChargementJaxb;
 import org.xml.sax.SAXException;
-import validator.EtatChargementSynataxicalValidator;
+import validator.syntaxe.EtatChargementSynataxicalValidator;
 
 /**
  *
@@ -20,21 +20,21 @@ import validator.EtatChargementSynataxicalValidator;
  */
 public class EtatChargementTest {
 
-    public static void main(String[] args) throws JAXBException, SAXException {
-
-        String xmlFilePath = "src/xml/EC_20180412152523_30900120180000006.xml";
-        String accuseFilePath = "E:/ack/EC/";
-        EtatChargementJaxbHelper etatChargementJaxbHelper = new EtatChargementJaxbHelper();
-        EtatChargementJaxb etatChargementJaxb = etatChargementJaxbHelper.unmarshall(xmlFilePath);
-        System.out.println(etatChargementJaxb);
-
-        EtatChargementSynataxicalValidator etatChargementSynataxicalValidator = new EtatChargementSynataxicalValidator();
-        Object[] resValidation = etatChargementSynataxicalValidator.validate(etatChargementJaxb, xmlFilePath);
-        System.out.println(etatChargementSynataxicalValidator.getErrorMessages());
-
-        EtatChargementAccuseJaxbHelper etatChargementAccuseJaxbHelper = new EtatChargementAccuseJaxbHelper();
-        etatChargementAccuseJaxbHelper.generateAccuse(etatChargementJaxb.getHeader(), etatChargementJaxb.getReferenceEtatChagement(),
-                 "EC", resValidation, accuseFilePath);
-    }
+//    public static void main(String[] args) throws JAXBException, SAXException {
+//
+//        String xmlFilePath = "src/xml/EC_20180412152523_30900120180000006.xml";
+//        String accuseFilePath = "E:/ack/EC/";
+//        EtatChargementJaxbHelper etatChargementJaxbHelper = new EtatChargementJaxbHelper();
+//        EtatChargementJaxb etatChargementJaxb = etatChargementJaxbHelper.unmarshall(xmlFilePath);
+//        System.out.println(etatChargementJaxb);
+//
+//        EtatChargementSynataxicalValidator etatChargementSynataxicalValidator = new EtatChargementSynataxicalValidator();
+//        Object[] resValidation = etatChargementSynataxicalValidator.validate(etatChargementJaxb, xmlFilePath);
+//        System.out.println(etatChargementSynataxicalValidator.getErrorMessages());
+//
+//        EtatChargementAccuseJaxbHelper etatChargementAccuseJaxbHelper = new EtatChargementAccuseJaxbHelper();
+//        etatChargementAccuseJaxbHelper.generateAccuse(etatChargementJaxb.getHeader(), etatChargementJaxb.getReferenceEtatChagement(),
+//                 "EC", resValidation, accuseFilePath);
+//    }
 
 }

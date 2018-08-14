@@ -65,7 +65,7 @@ public class FileHelper {
         if (pos == -1) {
             return str;
         }
-        return str.substring(0, pos);
+        return str.substring(0, pos).toLowerCase();
     }
 
     public static boolean createIfNotExist(String path) {

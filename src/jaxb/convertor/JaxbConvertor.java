@@ -5,16 +5,17 @@
  */
 package jaxb.convertor;
 
-import jaxb.vo.EtatChargementJaxb;
+import jaxb.vo.AbstractJaxbObject;
+import util.JaxbUtil;
 
 /**
  *
- * @author t3500
+ * @author YOUNES
  */
-public class EtatChargementJaxbHelper extends JaxbConvertor<EtatChargementJaxb> {
-
-    public EtatChargementJaxbHelper() {
-        super(EtatChargementJaxb.class);
+public class JaxbConvertor<T extends AbstractJaxbObject> extends JaxbUtil{
+    
+    public JaxbConvertor(Class entityClass) {
+        super(entityClass);
     }
-
+    
 }

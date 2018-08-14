@@ -6,13 +6,12 @@
 package jaxb.convertor;
 
 import jaxb.vo.BonEntreeJaxb;
-import util.JaxbUtil;
 
 /**
  *
  * @author t3500
  */
-public class BonEntreeJaxbHelper extends JaxbUtil<BonEntreeJaxb> {
+public class BonEntreeJaxbHelper extends JaxbConvertor<BonEntreeJaxb> {
 
     public BonEntreeJaxbHelper() {
         super(BonEntreeJaxb.class);

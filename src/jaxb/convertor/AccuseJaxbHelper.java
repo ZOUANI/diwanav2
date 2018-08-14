@@ -5,6 +5,7 @@
  */
 package jaxb.convertor;
 
+import jaxb.vo.AbstractJaxbObject;
 import jaxb.vo.HeaderJaxb;
 import jaxb.vo.AccuseJaxb;
 import util.FileHelper;
@@ -52,6 +53,8 @@ public abstract class AccuseJaxbHelper extends JaxbUtil<AccuseJaxb> {
         marshall(accuseJaxb, destinationPath, constructAckFileName(headerJaxb, ref, typeFile));
     }
 
-    public abstract void beforeGenerate(AccuseJaxb accuseJaxb) ;
+    public abstract void beforeGenerate(AccuseJaxb accuseJaxb);
+
+  //  public abstract AccuseJaxbHelper getInstance(AbstractJaxbObject accuseJaxb);
 
 }

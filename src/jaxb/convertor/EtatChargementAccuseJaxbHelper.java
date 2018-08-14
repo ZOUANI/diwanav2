@@ -17,4 +17,9 @@ public class EtatChargementAccuseJaxbHelper extends AccuseJaxbHelper {
         // accuseJaxb.getInfo().setNumeroAutorisationMouvementPortuaire(etatChargementJaxb.get);
     }
 
+//    @Override
+//    public AccuseJaxbHelper getInstance(AbstractJaxbObject accuseJaxb) {
+//        return new EtatChargementAccuseJaxbHelper();
+//    }
+
 }

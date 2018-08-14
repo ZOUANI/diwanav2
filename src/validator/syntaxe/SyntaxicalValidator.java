@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package validator;
+package validator.syntaxe;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBException;
-import jaxb.vo.DeclarationEnDetailJaxb;
-import jaxb.vo.EquipementJaxb;
 import org.xml.sax.SAXException;
 import util.DateUtils;
 import util.NumberConverter;
 import util.StringUtils;
-import static validator.DeclarationEnDetailSyntaxicalValidator.validate;
 
 /**
  *
@@ -24,6 +21,8 @@ import static validator.DeclarationEnDetailSyntaxicalValidator.validate;
 public abstract class SyntaxicalValidator<T> {
 
     private final List<String> errorMessages = new ArrayList();
+
+    public abstract Object[] validate(T myObjectToValidate, String xmlFileName) throws JAXBException, SAXException;
 
     public abstract void valiadteSyntaxicalRule(T myObjectToValidate);
 

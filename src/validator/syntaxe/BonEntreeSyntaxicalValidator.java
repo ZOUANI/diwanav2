@@ -1,4 +1,4 @@
-package validator;
+package validator.syntaxe;
 
 import javax.xml.bind.JAXBException;
 import jaxb.vo.BonEntreeJaxb;
@@ -9,6 +9,7 @@ public class BonEntreeSyntaxicalValidator extends SyntaxicalValidator<BonEntreeJ
 
     
     // probleme avec la date !!!! quelle date ? op ou bien message ?
+    @Override
     public Object[] validate(BonEntreeJaxb bonEntreeJaxb, String xmlFileName) throws JAXBException, SAXException {
         return super.validate(bonEntreeJaxb, "BE", bonEntreeJaxb.getAMP().getNumAMP(), bonEntreeJaxb.getDateOperation(), xmlFileName);
     }

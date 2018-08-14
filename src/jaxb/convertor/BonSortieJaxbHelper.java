@@ -6,13 +6,12 @@
 package jaxb.convertor;
 
 import jaxb.vo.BonSortieJaxb;
-import util.JaxbUtil;
 
 /**
  *
  * @author t3500
  */
-public class BonSortieJaxbHelper extends JaxbUtil<BonSortieJaxb> {
+public class BonSortieJaxbHelper extends JaxbConvertor<BonSortieJaxb> {
 
     public BonSortieJaxbHelper() {
         super(BonSortieJaxb.class);

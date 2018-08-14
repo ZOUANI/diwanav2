@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "etatChargement")
-public class EtatChargementJaxb {
+public class EtatChargementJaxb extends AbstractJaxbObject{
 
     protected String referenceEtatChagement;
     private String agentControle;
@@ -24,7 +24,7 @@ public class EtatChargementJaxb {
     private VoyageJaxb voyage;
     private OperateurJaxb operateurTransporteurTerrestre;
     private OperateurJaxb transporteur;
-    private HeaderJaxb header;
+ //   private HeaderJaxb header;
     private List<DeclarationEnDetailJaxb> declarationEnDetails;
     private List<MoyenTransportJaxb> moyenTransports;
     private MarchandiseSousCouvertAutresDocumentsJaxb marchandiseSousCouvertAutresDocuments;
@@ -114,17 +114,17 @@ public class EtatChargementJaxb {
         this.transporteur = transporteur;
     }
 
-    @XmlElement(name = "header")
-    public HeaderJaxb getHeader() {
-        if (header == null) {
-            header = new HeaderJaxb();
-        }
-        return header;
-    }
-
-    public void setHeader(HeaderJaxb header) {
-        this.header = header;
-    }
+//    @XmlElement(name = "header")
+//    public HeaderJaxb getHeader() {
+//        if (header == null) {
+//            header = new HeaderJaxb();
+//        }
+//        return header;
+//    }
+//
+//    public void setHeader(HeaderJaxb header) {
+//        this.header = header;
+//    }
 
     public String getDecisionSelectivite() {
         return decisionSelectivite;
@@ -193,6 +193,11 @@ public class EtatChargementJaxb {
                 + ", declarationEnDetails=" + declarationEnDetails + "\n"
                 + ", moyenTransports=" + moyenTransports + "\n"
                 + ", marchandiseSousCouvertAutresDocuments=" + marchandiseSousCouvertAutresDocuments + '}';
+    }
+    
+     @Override
+    public String getReferenceInXmlFile() {
+        return this.getReferenceEtatChagement();
     }
 
 }
